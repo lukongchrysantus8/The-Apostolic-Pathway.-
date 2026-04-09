@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Apostolic Pathway - Restoring the Church to Truth, Power & True Discipleship</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #d4af37;
+            --accent: #ffffff;
+            --dark-bg: #0a0a0a;
+            --light-text: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-600: #666666;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: var(--light-text);
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary);
+            padding: 1.2rem 2rem;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo-symbol {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-symbol::before {
+            content: '✦';
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.5rem 1rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a.active {
+            border-bottom-color: var(--secondary);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .language-toggle {
+            background: none;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .language-toggle:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+            border-top: 1px solid var(--secondary);
+        }
+
+        section:first-of-type {
+            border-top: none;
+            margin-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(0, 0, 0, 0) 50%);
+            pointer-events: none;
+        }
+
+        .hero .content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            color: var(--gray-200);
+            line-height: 1.9;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 2px solid var(--secondary);
+            background: transparent;
+            color: var(--secondary);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            z-index: -1;
+            transition: left 0.4s ease;
+        }
+
+        .btn:hover {
+            color: var(--primary);
+            left: 0;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-primary::before {
+            background: var(--primary);
+        }
+
+        .btn-primary:hover {
+            color: var(--secondary);
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .category-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+            border: 1px solid var(--secondary);
+            padding: 2.5rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .category-card:hover::before {
+            left: 100%;
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .category-card p {
+            font-size: 1rem;
+            color: var(--gray-200);
+        }
+
+        /* Assessment Section */
+        .assessment-container {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .assessment-container.active {
+            display: block;
+        }
+
+        .assessment-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .question-container {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--secondary);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .question-number {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .answer-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .answer-option {
+            background: transparent;
+            border: 1px solid var(--gray-600);
+            padding: 1rem 1.5rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--light-text);
+        }
+
+        .answer-option:hover {
+            border-color: var(--secondary);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .answer-option.selected {
+            background: var(--secondary);
+            color: var(--primary);
+            border-color: var(--secondary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--gray-600);
+            margin-bottom: 2rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transition: width 0.4s ease;
+        }
+
+        /* Results Section */
+        .results-container {
+            display: none;
+            text-align: center;
+        }
+
+        .results-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .results-score {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--light-text);
+        }
+
+        .results-details {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--secondary);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        .results-details h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .results-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .results-details li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .results-details li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .vision-box h4 {
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Counseling Section */
+        .counseling-hero {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--secondary);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-link {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            font-weight: 400;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+            border: 1px solid var(--secondary);
+            padding: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.1);
+        }
+
+        .resource-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+            border-top: 2px solid var(--secondary);
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--secondary);
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            nav .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .tagline {
+                font-size: 1.3rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-symbol"></div>
+                <span>APW</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#assessment" class="nav-link">Assessment</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#counseling" class="nav-link">Counseling</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="language-toggle" onclick="toggleLanguage()">
+                    <span id="langToggle">English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container" style="width: 100%;">
+            <div class="content">
+                <h1 id="heroTitle">The Apostolic Pathway</h1>
+                <p class="tagline" id="heroTagline">Restoring the Church to Truth, Power and True Discipleship.</p>
+                <p class="hero-description" id="heroDesc">
+                    A comprehensive platform dedicated to reviving believers, restoring church health, and building true disciples of Jesus Christ. Addressing the challenges of new converts, backsliders, church workers, leaders, and pastors through biblical wisdom and spiritual transformation.
+                </p>
+                <div class="cta-group">
+                    <button class="btn btn-primary" onclick="scrollToAssessment()" id="btnStartAssessment">Start Assessment</button>
+                    <button class="btn" onclick="scrollToCounseling()" id="btnGetHelp">Get Help Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories">
+        <div class="container">
+            <h2 id="catTitle">Who We Serve</h2>
+            <div class="category-grid" id="categoryGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Section -->
+    <section id="assessment">
+        <div class="container">
+            <div class="assessment-header" id="assessmentHeader">
+                <h2 id="assessTitle">Interactive Assessment</h2>
+                <p id="assessDesc">Take a personalized diagnostic to understand your spiritual condition and receive tailored guidance.</p>
+            </div>
+
+            <!-- Category Selection -->
+            <div id="categorySelection" class="assessment-container active">
+                <h3 id="selectCatLabel">Select Your Category:</h3>
+                <div class="category-grid" id="assessmentCategoryGrid">
+                    <!-- Dynamically populated -->
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn btn-primary" onclick="resetAssessment()" id="btnBackHome">← Back to Home</button>
+                </div>
+            </div>
+
+            <!-- Questions -->
+            <div id="questionsContainer" class="assessment-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <div id="questionsContent">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="resultsContainer" class="assessment-container">
+                <h3 id="resultsTitle">Your Assessment Results</h3>
+                <div class="results-score" id="resultsScore">0%</div>
+                <p class="results-message" id="resultsMessage">Loading your results...</p>
+                <div class="results-details">
+                    <h4 id="resAnalysis">Your Spiritual Condition</h4>
+                    <ul id="resultsList">
+                        <!-- Dynamically populated -->
+                    </ul>
+                </div>
+                <div class="results-details">
+                    <h4 id="resSteps">Recommended Next Steps</h4>
+                    <ul id="stepsList">
+                        <!-- Dynamically populated -->
+                    </ul>
+                </div>
+                <p id="resVerse" style="margin-top: 2rem; font-size: 1.1rem; font-style: italic; color: var(--secondary);"></p>
+                <div class="cta-group" style="margin-top: 3rem;">
+                    <button class="btn btn-primary" onclick="resetAssessment()" id="btnRetakeAssessment">Retake Assessment</button>
+                    <button class="btn" onclick="scrollToCounseling()" id="btnContactCounselor">Contact a Counselor</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 id="aboutTitle">Our Vision & Mission</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 id="visionHeading">The Apostolic Mandate</h3>
+                    <p id="aboutP1">
+                        The Apostolic Pathway exists to restore the Church to her original calling: to preach the Gospel with power, make true disciples, and establish believers in apostolic doctrine and practice.
+                    </p>
+                    <p id="aboutP2">
+                        We recognize that the African Church—and the global Church—faces critical challenges: spiritual decline, weak discipleship, leadership misalignment, backsliding, and the loss of spiritual authority. Our mission is to address these issues directly and biblically.
+                    </p>
+                    <div class="vision-box">
+                        <h4 id="visionLabel">Our Vision</h4>
+                        <p id="visionText">
+                            A Church restored to truth, empowered by the Holy Spirit, committed to true discipleship, and advancing the Kingdom of God with apostolic authority and power.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 id="focusHeading">Our Focus Areas</h3>
+                    <div class="vision-box">
+                        <h4>Revival & Restoration</h4>
+                        <p id="focusP1">Awakening believers to their divine purpose and restoring them to fellowship with God.</p>
+                    </div>
+                    <div class="vision-box">
+                        <h4>True Discipleship</h4>
+                        <p id="focusP2">Building disciples who follow Christ completely and multiply disciples in others.</p>
+                    </div>
+                    <div class="vision-box">
+                        <h4>Leadership Alignment</h4>
+                        <p id="focusP3">Equipping church leaders with apostolic vision and servant-leadership principles.</p>
+                    </div>
+                    <div class="vision-box">
+                        <h4>Spiritual Power</h4>
+                        <p id="focusP4">Restoring the Church's authority, anointing, and power through the Holy Spirit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources">
+        <div class="container">
+            <h2 id="resourcesTitle">Teachings & Resources</h2>
+            <p id="resourcesDesc">Curated biblical teachings, devotionals, and discipleship guides for spiritual growth.</p>
+            <div class="resources-grid" id="resourcesGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Counseling Section -->
+    <section id="counseling">
+        <div class="container">
+            <h2 id="counselingTitle">Spiritual Counseling & Support</h2>
+            <div class="counseling-hero">
+                <h3 id="counselingSubtitle">We're Here to Help You</h3>
+                <p id="counselingMessage">
+                    Whether you're struggling with faith, church hurt, spiritual questions, or need guidance for your spiritual journey, our counselors are ready to support you with biblical wisdom and compassionate care.
+                </p>
+            </div>
+            <div class="contact-info" id="contactInfo">
+                <div class="contact-card">
+                    <h3>📞 Phone</h3>
+                    <p id="phoneLabel">Call for immediate support</p>
+                    <a href="tel:+234671187375" class="contact-link">+234 (67) 118-7375</a>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <p id="emailLabel">Send us a detailed message</p>
+                    <a href="mailto:lukongchrysantus7@gmail.com" class="contact-link">lukongchrysantus7@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <h3>💬 Quick Message</h3>
+                    <p id="messageLabel">Share your prayer request</p>
+                    <button class="btn" onclick="openMessageModal()" id="btnSendMessage">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 id="footerAbout">About</h4>
+                    <ul>
+                        <li><a href="#about" id="footerVision">Our Vision</a></li>
+                        <li><a href="#about" id="footerMission">Our Mission</a></li>
+                        <li><a href="#resources" id="footerResources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footerSupport">Support</h4>
+                    <ul>
+                        <li><a href="#counseling" id="footerCounseling">Get Help</a></li>
+                        <li><a href="tel:+234671187375" id="footerPhone">Contact Us</a></li>
+                        <li><a href="mailto:lukongchrysantus7@gmail.com" id="footerEmail">Email</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footerConnect">Connect</h4>
+                    <ul>
+                        <li><p id="footerCommunity">Join our community of believers</p></li>
+                        <li><p id="footerGrowth">Growing together in faith</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" id="footerBottom">
+                <p>&copy; 2024 The Apostolic Pathway. All rights reserved. | "Restoring the Church to Truth, Power & True Discipleship."</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Message Modal -->
+    <div id="messageModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 2000; padding: 2rem;">
+        <div style="background: #000; border: 1px solid #d4af37; max-width: 600px; margin: 100px auto; padding: 2rem; border-radius: 4px;">
+            <h3 id="modalTitle">Send Us a Message</h3>
+            <input type="text" id="messageName" placeholder="Your Name" style="width: 100%; margin: 1rem 0; padding: 0.8rem; background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; color: white;">
+            <textarea id="messageText" placeholder="Your Message" rows="6" style="width: 100%; margin: 1rem 0; padding: 0.8rem; background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; color: white; font-family: Arial;"></textarea>
+            <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                <button class="btn" onclick="closeMessageModal()" id="btnCancelMessage">Cancel</button>
+                <button class="btn btn-primary" onclick="sendMessage()" id="btnSendMsg">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language Data
+        const translations = {
+            en: {
+                // Navigation
+                langToggle: "English",
+                // Hero
+                heroTitle: "The Apostolic Pathway",
+                heroTagline: "Restoring the Church to Truth, Power and True Discipleship.",
+                heroDesc: "A comprehensive platform dedicated to reviving believers, restoring church health, and building true disciples of Jesus Christ. Addressing the challenges of new converts, backsliders, church workers, leaders, and pastors through biblical wisdom and spiritual transformation.",
+                btnStartAssessment: "Start Assessment",
+                btnGetHelp: "Get Help Now",
+                // Categories
+                catTitle: "Who We Serve",
+                newConverts: "New Converts",
+                newConvertsDesc: "Build a strong foundation in Christ through structured discipleship pathways and core teachings.",
+                backsliders: "Backsliders",
+                backslidersDesc: "Healing from church hurt and restoration to vibrant faith and fellowship.",
+                churchWorkers: "Church Workers",
+                churchWorkersDesc: "Moving from activity to authentic service with a renewed heart for God.",
+                leaders: "Church Leaders",
+                leadersDesc: "Vision clarity, strategic guidance, and apostolic alignment for church growth.",
+                pastors: "Pastors",
+                pastorsDesc: "Renewal, discipleship focus, and apostolic leadership for spiritual multiplication.",
+                youths: "Youths & Students",
+                youthsDesc: "Mentorship, purpose discovery, and becoming spiritual leaders of the next generation.",
+                churchAtLarge: "The Church at Large",
+                churchDesc: "Teaching on true ministry, authentic discipleship systems, and church transformation.",
+                // Assessment
+                assessTitle: "Interactive Assessment",
+                assessDesc: "Take a personalized diagnostic to understand your spiritual condition and receive tailored guidance.",
+                selectCatLabel: "Select Your Category:",
+                btnBackHome: "← Back to Home",
+                resultsTitle: "Your Assessment Results",
+                resAnalysis: "Your Spiritual Condition",
+                resSteps: "Recommended Next Steps",
+                btnRetakeAssessment: "Retake Assessment",
+                btnContactCounselor: "Contact a Counselor",
+                // About
+                aboutTitle: "Our Vision & Mission",
+                visionHeading: "The Apostolic Mandate",
+                aboutP1: "The Apostolic Pathway exists to restore the Church to her original calling: to preach the Gospel with power, make true disciples, and establish believers in apostolic doctrine and practice.",
+                aboutP2: "We recognize that the African Church—and the global Church—faces critical challenges: spiritual decline, weak discipleship, leadership misalignment, backsliding, and the loss of spiritual authority. Our mission is to address these issues directly and biblically.",
+                visionLabel: "Our Vision",
+                visionText: "A Church restored to truth, empowered by the Holy Spirit, committed to true discipleship, and advancing the Kingdom of God with apostolic authority and power.",
+                focusHeading: "Our Focus Areas",
+                focusP1: "Awakening believers to their divine purpose and restoring them to fellowship with God.",
+                focusP2: "Building disciples who follow Christ completely and multiply disciples in others.",
+                focusP3: "Equipping church leaders with apostolic vision and servant-leadership principles.",
+                focusP4: "Restoring the Church's authority, anointing, and power through the Holy Spirit.",
+                // Resources
+                resourcesTitle: "Teachings & Resources",
+                resourcesDesc: "Curated biblical teachings, devotionals, and discipleship guides for spiritual growth.",
+                // Counseling
+                counselingTitle: "Spiritual Counseling & Support",
+                counselingSubtitle: "We're Here to Help You",
+                counselingMessage: "Whether you're struggling with faith, church hurt, spiritual questions, or need guidance for your spiritual journey, our counselors are ready to support you with biblical wisdom and compassionate care.",
+                phoneLabel: "Call for immediate support",
+                emailLabel: "Send us a detailed message",
+                messageLabel: "Share your prayer request",
+                btnSendMessage: "Send Message",
+                // Footer
+                footerAbout: "About",
+                footerVision: "Our Vision",
+                footerMission: "Our Mission",
+                footerResources: "Resources",
+                footerSupport: "Support",
+                footerCounseling: "Get Help",
+                footerPhone: "Contact Us",
+                footerEmail: "Email",
+                footerConnect: "Connect",
+                footerCommunity: "Join our community of believers",
+                footerGrowth: "Growing together in faith",
+                footerBottom: "&copy; 2024 The Apostolic Pathway. All rights reserved. | \"Restoring the Church to Truth, Power & True Discipleship.\"",
+                // Modal
+                modalTitle: "Send Us a Message",
+                btnCancelMessage: "Cancel",
+                btnSendMsg: "Send",
+            },
+            fr: {
+                // Navigation
+                langToggle: "Français",
+                // Hero
+                heroTitle: "Le Chemin Apostolique",
+                heroTagline: "Restaurer l'Église dans la Vérité, la Puissance et le Vrai Discipulat.",
+                heroDesc: "Une plateforme complète dédiée à la revitalisation des croyants, à la restauration de la santé de l'Église et à la formation de vrais disciples de Jésus-Christ. Aborder les défis des nouveaux convertis, des pécheurs repentants, des ouvriers d'église, des dirigeants et des pasteurs par la sagesse biblique et la transformation spirituelle.",
+                btnStartAssessment: "Commencer l'Évaluation",
+                btnGetHelp: "Obtenir de l'Aide",
+                // Categories
+                catTitle: "Qui Nous Servons",
+                newConverts: "Nouveaux Convertis",
+                newConvertsDesc: "Construisez une base solide en Christ grâce à des parcours de discipulat structurés et des enseignements fondamentaux.",
+                backsliders: "Pécheurs Repentants",
+                backslidersDesc: "Guérison de la blessure d'église et restauration à une foi et une communion vibrantes.",
+                churchWorkers: "Travailleurs d'Église",
+                churchWorkersDesc: "Passer de l'activité au service authentique avec un cœur renouvelé pour Dieu.",
+                leaders: "Chefs d'Église",
+                leadersDesc: "Clarté de vision, orientation stratégique et alignement apostolique pour la croissance de l'Église.",
+                pastors: "Pasteurs",
+                pastorsDesc: "Renouveau, accent sur le discipulat et leadership apostolique pour la multiplication spirituelle.",
+                youths: "Jeunes & Étudiants",
+                youthsDesc: "Mentorat, découverte de but et devenir des leaders spirituels de la prochaine génération.",
+                churchAtLarge: "L'Église en Général",
+                churchDesc: "Enseignement sur le vrai ministère, les systèmes de discipulat authentiques et la transformation de l'Église.",
+                // Assessment
+                assessTitle: "Évaluation Interactive",
+                assessDesc: "Suivez un diagnostic personnalisé pour comprendre votre condition spirituelle et recevoir des conseils adaptés.",
+                selectCatLabel: "Sélectionnez Votre Catégorie:",
+                btnBackHome: "← Retour à l'Accueil",
+                resultsTitle: "Résultats de Votre Évaluation",
+                resAnalysis: "Votre Condition Spirituelle",
+                resSteps: "Étapes Suivantes Recommandées",
+                btnRetakeAssessment: "Refaire l'Évaluation",
+                btnContactCounselor: "Contacter un Conseiller",
+                // About
+                aboutTitle: "Notre Vision et Notre Mission",
+                visionHeading: "Le Mandat Apostolique",
+                aboutP1: "Le Chemin Apostolique existe pour restaurer l'Église à sa vocation originelle: prêcher l'Évangile avec puissance, faire de vrais disciples et établir les croyants dans la doctrine et la pratique apostoliques.",
+                aboutP2: "Nous reconnaissons que l'Église africaine—et l'Église mondiale—fait face à des défis critiques: déclin spirituel, faible discipulat, désalignement du leadership, péché et perte d'autorité spirituelle. Notre mission est d'aborder ces questions directement et bibliquement.",
+                visionLabel: "Notre Vision",
+                visionText: "Une Église restaurée dans la vérité, habilitée par le Saint-Esprit, engagée dans le vrai discipulat et avançant le Royaume de Dieu avec autorité apostolique et puissance.",
+                focusHeading: "Nos Domaines de Concentration",
+                focusP1: "Réveiller les croyants à leur but divin et les restaurer à la communion avec Dieu.",
+                focusP2: "Construire des disciples qui suivent complètement Christ et multiplient les disciples chez les autres.",
+                focusP3: "Équiper les leaders d'église de la vision apostolique et des principes du leadership de serviteur.",
+                focusP4: "Restaurer l'autorité, l'onction et la puissance de l'Église par le Saint-Esprit.",
+                // Resources
+                resourcesTitle: "Enseignements et Ressources",
+                resourcesDesc: "Enseignements bibliques, dévotions et guides de discipulat curarisés pour la croissance spirituelle.",
+                // Counseling
+                counselingTitle: "Conseil Spirituel et Soutien",
+                counselingSubtitle: "Nous Sommes Là Pour Vous Aider",
+                counselingMessage: "Que vous luttiez contre la foi, la blessure d'église, des questions spirituelles ou ayez besoin de conseils pour votre cheminement spirituel, nos conseillers sont prêts à vous soutenir avec la sagesse biblique et des soins compatissants.",
+                phoneLabel: "Appelez pour un soutien immédiat",
+                emailLabel: "Envoyez-nous un message détaillé",
+                messageLabel: "Partagez votre demande de prière",
+                btnSendMessage: "Envoyer un Message",
+                // Footer
+                footerAbout: "À propos",
+                footerVision: "Notre Vision",
+                footerMission: "Notre Mission",
+                footerResources: "Ressources",
+                footerSupport: "Soutien",
+                footerCounseling: "Obtenir de l'Aide",
+                footerPhone: "Nous Contacter",
+                footerEmail: "E-mail",
+                footerConnect: "Connexion",
+                footerCommunity: "Rejoignez notre communauté de croyants",
+                footerGrowth: "Grandir ensemble dans la foi",
+                footerBottom: "&copy; 2024 Le Chemin Apostolique. Tous les droits sont réservés. | \"Restaurer l'Église dans la Vérité, la Puissance et le Vrai Discipulat.\"",
+                // Modal
+                modalTitle: "Envoyez-Nous un Message",
+                btnCancelMessage: "Annuler",
+                btnSendMsg: "Envoyer",
+            }
+        };
+
+        // Category Data
+        const categories = [
+            {
+                id: "newConverts",
+                icon: "🌱",
+                problem: "Lack of follow-up, weak foundation, confusion about faith basics",
+                solutions: ["Foundational doctrine teachings", "Step-by-step discipleship pathway", "Biblical basics clarification"],
+                verseNeed: "Therefore, as God's chosen people, holy and dearly loved, clothe yourselves with compassion, kindness, humility, gentleness and patience. - Colossians 3:12"
+            },
+            {
+                id: "backsliders",
+                icon: "🕊️",
+                problem: "Church hurt, offense, isolation, loss of faith, spiritual coldness",
+                solutions: ["Healing from church wounds", "Restoration pathway back to fellowship", "Encouragement and grace", "Overcoming bitterness"],
+                verseNeed: "Come to me, all you who are weary and burdened, and I will give you rest. - Matthew 11:28"
+            },
+            {
+                id: "churchWorkers",
+                icon: "⚒️",
+                problem: "Lukewarm service, competition, 'eye service', lacking true motivation",
+                solutions: ["Heart-check and renewal teachings", "Servant leadership principles", "Purpose rediscovery", "Building authentic ministry"],
+                verseNeed: "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters. - Colossians 3:23"
+            },
+            {
+                id: "leaders",
+                icon: "👑",
+                problem: "Misalignment with vision, lack of clear direction, confusion about priorities",
+                solutions: ["Vision clarity tools", "Strategic church planning", "Leadership development", "Apostolic alignment"],
+                verseNeed: "Where there is no vision, the people perish. - Proverbs 29:18"
+            },
+            {
+                id: "pastors",
+                icon: "📖",
+                problem: "Weariness, burnout, focus on programs instead of people, lack of discipleship",
+                solutions: ["Pastoral renewal and strength", "Apostolic leadership training", "Discipleship systems", "Sustainable ministry practices"],
+                verseNeed: "It was he who gave some to be apostles, some to be prophets, some to be evangelists, and some to be pastors and teachers. - Ephesians 4:11"
+            },
+            {
+                id: "youths",
+                icon: "🔥",
+                problem: "Lack of mentorship, weak spiritual foundation, unclear purpose in life and church",
+                solutions: ["Purpose and calling discovery", "Mentorship pathways", "Leadership development for youth", "Digital-age discipleship"],
+                verseNeed: "Don't let anyone look down on you because you are young, but set an example for the believers. - 1 Timothy 4:12"
+            }
+        ];
+
+        // Assessment Questions per Category
+        const assessments = {
+            newConverts: [
+                { question: "How long have you been a Christian?", answers: ["Less than 3 months", "3-6 months", "6-12 months", "1-2 years"] },
+                { question: "How clear are you about the basics of Christian faith (salvation, grace, biblical foundation)?", answers: ["Very unclear", "Somewhat unclear", "Mostly clear", "Very clear"] },
+                { question: "Do you have a consistent prayer life?", answers: ["Never pray", "Rarely pray", "Sometimes pray", "Pray regularly"] },
+                { question: "Are you reading and understanding the Bible?", answers: ["Not at all", "Rarely", "Sometimes", "Regularly and understanding"] },
+                { question: "Do you have a mentor or discipler in your life?", answers: ["No one", "Looking for one", "Have informal guidance", "Have active mentor"] },
+                { question: "How confident are you in sharing your faith with others?", answers: ["Not confident at all", "Somewhat unsure", "Fairly confident", "Very confident"] },
+                { question: "Do you understand why you became a Christian?", answers: ["Not really", "Vaguely", "Mostly yes", "Yes, very clear"] },
+                { question: "Are you involved in a local church community?", answers: ["No involvement", "Attend occasionally", "Attend regularly", "Actively engaged and serving"] },
+                { question: "How would you describe your relationship with God right now?", answers: ["Uncertain or distant", "Developing", "Growing", "Strong and intimate"] },
+                { question: "Do you know the difference between salvation and sanctification?", answers: ["No idea", "Vague understanding", "Basic understanding", "Clear understanding"] },
+                { question: "Are you aware of the Holy Spirit's role in your Christian life?", answers: ["Not aware", "Minimal awareness", "Some understanding", "Clear and experiential"] },
+                { question: "How much of the Bible have you read?", answers: ["None or very little", "Some chapters", "Several books", "Large portions or entire Bible"] },
+                { question: "Do you understand what it means to be 'born again'?", answers: ["No understanding", "Vague idea", "Basic grasp", "Clear and transformative understanding"] },
+                { question: "How committed are you to growing spiritually?", answers: ["Not committed", "Somewhat interested", "Committed", "Deeply committed"] },
+                { question: "What is your biggest challenge as a new Christian?", answers: ["Understanding doctrine", "Consistency in prayer/Bible", "Overcoming sin patterns", "Finding community/accountability"] }
+            ],
+            backsliders: [
+                { question: "How long has it been since you felt close to God?", answers: ["Recently still close", "Several months", "A year or more", "Many years"] },
+                { question: "Do you feel hurt or disappointed by the church?", answers: ["Deeply hurt", "Somewhat hurt", "Minor hurt", "No significant hurt"] },
+                { question: "Are you currently involved in a church?", answers: ["Not at all", "Occasionally", "Regularly", "Actively serving"] },
+                { question: "How is your prayer life?", answers: ["Non-existent", "Very sporadic", "Occasional", "Consistent"] },
+                { question: "Do you feel isolated from other believers?", answers: ["Very isolated", "Quite isolated", "Somewhat isolated", "Connected to believers"] },
+                { question: "What is your current attitude toward church leaders?", answers: ["Resentful or angry", "Skeptical", "Cautiously hopeful", "Trusting and supportive"] },
+                { question: "How strong is your faith in God right now?", answers: ["Very weak or non-existent", "Wavering", "Decent but struggling", "Strong"] },
+                { question: "Are you living according to biblical principles?", answers: ["Not at all", "Rarely", "Sometimes", "Consistently"] },
+                { question: "What caused your distance from God?", answers: ["Church hurt/betrayal", "Personal sin/temptation", "Life circumstances", "Theological questions"] },
+                { question: "Do you desire to return to active faith?", answers: ["Not sure", "Reluctant", "Yes, but unsure how", "Yes, strongly"] },
+                { question: "How would you describe your relationship with God now?", answers: ["Broken/severed", "Distant", "Strained", "Healing"] },
+                { question: "Do you feel shame or condemnation about your backsliding?", answers: ["Deeply ashamed", "Very ashamed", "Somewhat ashamed", "Seeking grace and restoration"] },
+                { question: "Are you open to spiritual counseling and support?", answers: ["Not interested", "Maybe", "Yes, considering", "Yes, definitely"] },
+                { question: "What would help you most in your restoration?", answers: ["Understanding God's grace", "Healing from hurt", "Community and support", "Clarification of faith"] },
+                { question: "How do you see your spiritual future?", answers: ["Hopeless", "Uncertain", "Cautiously hopeful", "Bright with God's help"] }
+            ],
+            churchWorkers: [
+                { question: "How long have you been serving in the church?", answers: ["Less than 1 year", "1-3 years", "3-5 years", "More than 5 years"] },
+                { question: "What is your primary motivation for service?", answers: ["Obligation/duty", "Mixed motives", "Genuine desire to serve", "Deep calling from God"] },
+                { question: "How authentic is your heart in ministry?", answers: ["Primarily 'eye service'", "Often going through motions", "Mostly authentic", "Fully authentic"] },
+                { question: "Do you experience competition or jealousy with other workers?", answers: ["Often", "Sometimes", "Rarely", "Never"] },
+                { question: "How would you rate your passion for God?", answers: ["Cold/lukewarm", "Moderate", "Growing", "On fire for God"] },
+                { question: "Are you serving with right motives (recognition, approval)?", answers: ["Often fighting these", "Sometimes struggle", "Rarely struggle", "Clear motives"] },
+                { question: "How do you handle criticism or feedback?", answers: ["Defensively", "Struggle with it", "Accept it thoughtfully", "Welcome it graciously"] },
+                { question: "Is your service draining you spiritually?", answers: ["Very much", "Quite a bit", "Sometimes", "Energizing"] },
+                { question: "Do you invest personally in those you serve?", answers: ["Minimal investment", "Basic care", "Growing care", "Deep personal investment"] },
+                { question: "How clear is your calling to this specific ministry?", answers: ["Not clear at all", "Somewhat unclear", "Fairly clear", "Crystal clear"] },
+                { question: "Are you growing spiritually through your service?", answers: ["Not at all", "Minimal growth", "Some growth", "Significant spiritual growth"] },
+                { question: "How do you respond to humble/servant tasks?", answers: ["With resistance", "Reluctantly", "Willing", "Joyfully"] },
+                { question: "Is your family life suffering because of church work?", answers: ["Yes, significantly", "Somewhat", "Minimally", "Balanced well"] },
+                { question: "What area of your service needs most renewal?", answers: ["Heart motivation", "Skill development", "Vision clarity", "Personal relationship with God"] },
+                { question: "Are you open to spiritual renewal and growth?", answers: ["Not really", "Maybe", "Yes, somewhat", "Yes, definitely"] }
+            ],
+            leaders: [
+                { question: "How clear is the vision for your church?", answers: ["Very unclear", "Somewhat unclear", "Fairly clear", "Crystal clear to all"] },
+                { question: "Are your church strategies producing real spiritual transformation?", answers: ["No visible impact", "Some activity but limited impact", "Good progress", "Significant transformation"] },
+                { question: "How aligned are you with apostolic doctrine and practice?", answers: ["Not aligned", "Partially aligned", "Mostly aligned", "Fully aligned"] },
+                { question: "Are leaders united in vision and purpose?", answers: ["Divided/conflicted", "Somewhat divided", "Mostly united", "Fully united"] },
+                { question: "What is your church's primary focus?", answers: ["Programs and activities", "Mixed: programs and people", "People discipleship", "Making disciples who multiply"] },
+                { question: "How effective is your discipleship system?", answers: ["No system in place", "Weak/ineffective", "Developing well", "Strong and producing fruit"] },
+                { question: "Are you facing resistance to biblical leadership changes?", answers: ["Strong resistance", "Moderate resistance", "Some resistance", "Ready for change"] },
+                { question: "How is the spiritual health of your church?", answers: ["In decline", "Stagnant", "Growing slowly", "Vibrant and growing"] },
+                { question: "Do you feel equipped for apostolic leadership?", answers: ["Not equipped", "Partially equipped", "Fairly equipped", "Well equipped"] },
+                { question: "What is your biggest leadership challenge?", answers: ["Vision clarity", "Unity among leaders", "Transitioning from programs to people", "Spiritual authority and anointing"] },
+                { question: "How do you make major decisions?", answers: ["Top-down authority", "Mixed styles", "Collaborative consultation", "Spiritually discerned together"] },
+                { question: "Are you personally growing as a leader?", answers: ["Stagnant", "Slight growth", "Growing steadily", "Rapid spiritual growth"] },
+                { question: "How accountable are you to other leaders?", answers: ["No accountability", "Minimal", "Some accountability", "Strong accountability"] },
+                { question: "What would most help your church right now?", answers: ["Vision realignment", "Leadership training", "Spiritual revival", "Discipleship systems"] },
+                { question: "Are you open to apostolic restoration and renewal?", answers: ["Somewhat resistant", "Open but cautious", "Ready", "Eager to be transformed"] }
+            ],
+            pastors: [
+                { question: "How would you describe your current level of pastoral weariness?", answers: ["Severely exhausted", "Very tired", "Somewhat weary", "Fresh and energized"] },
+                { question: "Are you experiencing burnout?", answers: ["Yes, severe", "Yes, moderate", "Minor burnout", "No burnout"] },
+                { question: "How much time do you invest in personal discipleship vs. programs?", answers: ["Mostly programs", "More programs than discipleship", "Balanced", "Mostly discipleship"] },
+                { question: "Do you feel you're truly making disciples?", answers: ["Not at all", "Very few", "Some", "Yes, consistently"] },
+                { question: "How is your personal spiritual life?", answers: ["Neglected", "Minimal", "Maintained", "Strong and growing"] },
+                { question: "Are you doing church instead of raising leaders?", answers: ["Predominantly", "Often", "Sometimes", "No, focused on leadership development"] },
+                { question: "How supported do you feel as a pastor?", answers: ["Unsupported", "Minimally supported", "Fairly supported", "Well supported"] },
+                { question: "What drains your energy most?", answers: ["Administrative tasks", "Unmet expectations", "Conflict/criticism", "All energy going to programs"] },
+                { question: "Do you have a clear succession plan?", answers: ["No plan", "Vague plans", "Developing plans", "Clear and implemented"] },
+                { question: "How aligned are you with apostolic principles?", answers: ["Not aligned", "Somewhat aligned", "Mostly aligned", "Fully aligned"] },
+                { question: "What is your biggest pastoral struggle?", answers: ["Vision and direction", "Leadership multiplication", "Spiritual authority", "Personal burnout"] },
+                { question: "Do you invest in other pastors' lives and growth?", answers: ["No investment", "Minimal investment", "Some investment", "Significant investment"] },
+                { question: "How is your prayer and fasting life?", answers: ["Non-existent", "Minimal", "Regular", "Deep and consistent"] },
+                { question: "Are you open to pastoral renewal?", answers: ["Not ready", "Maybe", "Yes, considering", "Yes, desperately seeking"] },
+                { question: "What would most help your ministry right now?", answers: ["Rest and renewal", "Training on discipleship", "Spiritual breakthrough", "Community of supportive pastors"] }
+            ],
+            youths: [
+                { question: "Do you have a clear sense of purpose in life?", answers: ["No idea what I'm meant to do", "Confused about direction", "Some sense of purpose", "Clear sense of calling"] },
+                { question: "How strong is your faith in Jesus?", answers: ["Weak or questioning", "Okay but uncertain", "Growing stronger", "Very strong and personal"] },
+                { question: "Do you have spiritual mentors or role models?", answers: ["No mentors", "Looking for mentors", "Have informal guidance", "Have active mentors"] },
+                { question: "How engaged are you in your church?", answers: ["Not involved", "Occasionally attend", "Regular participation", "Active leadership/service"] },
+                { question: "What is your biggest spiritual challenge right now?", answers: ["Temptation/sin struggles", "Doubt/faith questions", "Peer pressure/fitting in", "Unclear future/purpose"] },
+                { question: "Are you reading the Bible regularly?", answers: ["Never", "Rarely", "Sometimes", "Regularly"] },
+                { question: "How do you view the older generation of Christians?", answers: ["Out of touch/irrelevant", "Mixed feelings", "Respect them", "Learn eagerly from them"] },
+                { question: "Do you feel equipped to share your faith with peers?", answers: ["Not confident", "Somewhat unsure", "Fairly confident", "Very confident"] },
+                { question: "How would you describe your prayer life?", answers: ["Non-existent", "Very sporadic", "Regular but brief", "Deep and consistent"] },
+                { question: "What excites you about being a Christian?", answers: ["Not sure it's relevant", "Some aspects appeal", "Many exciting things", "Everything—it's transforming"] },
+                { question: "Do you have healthy friendships within the church?", answers: ["No real friendships", "Few connections", "Some good friendships", "Deep and meaningful friendships"] },
+                { question: "How do you balance faith with culture and trends?", answers: ["Struggle significantly", "Often conflicted", "Trying to balance", "Clear biblical convictions"] },
+                { question: "Are you open to being mentored and discipled?", answers: ["Resistant", "Reluctant", "Open", "Eager for growth"] },
+                { question: "What kind of support would help you most?", answers: ["Life direction/purpose", "Spiritual growth", "Peer community", "Mentorship and guidance"] },
+                { question: "Do you see yourself as a potential leader in your church?", answers: ["Never thought of it", "Maybe someday", "Yes, I think so", "Yes, definitely called to lead"] }
+            ]
+        };
+
+        // Resources
+        const resources = [
+            {
+                title: "Apostolic Doctrine & Practice",
+                description: "Understanding and living out the foundational truths of apostolic Christianity."
+            },
+            {
+                title: "True Discipleship Framework",
+                description: "A biblical system for making disciples who make disciples."
+            },
+            {
+                title: "Revival & Spiritual Renewal",
+                description: "Teachings on awakening the Church to passion, power, and purpose."
+            },
+            {
+                title: "Pastoral Leadership Guide",
+                description: "Resources for pastors on spiritual multiplication and apostolic authority."
+            },
+            {
+                title: "Healing from Church Hurt",
+                description: "Restoration pathways for those wounded by the Church."
+            },
+            {
+                title: "Youth & Student Discipleship",
+                description: "Mentoring the next generation to become spiritual leaders."
+            }
+        ];
+
+        // Global State
+        let currentLanguage = "en";
+        let currentCategory = null;
+        let assessmentAnswers = [];
+        let currentQuestion = 0;
+
+        // Initialize
+        function init() {
+            renderCategories();
+            renderResources();
+            setupNavigation();
+        }
+
+        // Navigation Setup
+        function setupNavigation() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+        }
+
+        // Toggle Language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === "en" ? "fr" : "en";
+            updateAllText();
+        }
+
+        // Update All Text
+        function updateAllText() {
+            const t = translations[currentLanguage];
+            
+            // Update all elements with id
+            Object.keys(t).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    if (key === 'langToggle') {
+                        element.textContent = t[key];
+                    } else if (key === 'footerBottom') {
+                        element.innerHTML = t[key];
+                    } else if (key.includes('P') || key.includes('Desc')) {
+                        element.textContent = t[key];
+                    } else {
+                        element.textContent = t[key];
+                    }
+                }
+            });
+
+            // Re-render dynamic sections
+            renderCategories();
+            renderResources();
+        }
+
+        // Render Categories
+        function renderCategories() {
+            const grid1 = document.getElementById('categoryGrid');
+            const grid2 = document.getElementById('assessmentCategoryGrid');
+            const t = translations[currentLanguage];
+            
+            const categoryNames = {
+                newConverts: t.newConverts,
+                backsliders: t.backsliders,
+                churchWorkers: t.churchWorkers,
+                leaders: t.leaders,
+                pastors: t.pastors,
+                youths: t.youths
+            };
+
+            const categoryDescriptions = {
+                newConverts: t.newConvertsDesc,
+                backsliders: t.backslidersDesc,
+                churchWorkers: t.churchWorkersDesc,
+                leaders: t.leadersDesc,
+                pastors: t.pastorsDesc,
+                youths: t.youthsDesc
+            };
+
+            const html = categories.map(cat => `
+                <div class="category-card" onclick="selectCategory('${cat.id}')">
+                    <div class="category-icon">${cat.icon}</div>
+                    <h3>${categoryNames[cat.id]}</h3>
+                    <p>${categoryDescriptions[cat.id]}</p>
+                </div>
+            `).join('');
+
+            if (grid1) grid1.innerHTML = html;
+            if (grid2) grid2.innerHTML = html;
+        }
+
+        // Render Resources
+        function renderResources() {
+            const grid = document.getElementById('resourcesGrid');
+            if (!grid) return;
+
+            const html = resources.map(res => `
+                <div class="resource-card">
+                    <h3>${res.title}</h3>
+                    <p>${res.description}</p>
+                    <p style="margin-top: 1.5rem;">
+                        <a href="#counseling" style="color: var(--secondary); text-decoration: underline;">Learn More →</a>
+                    </p>
+                </div>
+            `).join('');
+
+            grid.innerHTML = html;
+        }
+
+        // Select Category
+        function selectCategory(categoryId) {
+            currentCategory = categoryId;
+            assessmentAnswers = [];
+            currentQuestion = 0;
+
+            document.getElementById('categorySelection').classList.remove('active');
+            document.getElementById('questionsContainer').classList.add('active');
+            renderQuestion();
+        }
+
+        // Render Question
+        function renderQuestion() {
+            const questions = assessments[currentCategory];
+            const question = questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+
+            document.getElementById('progressFill').style.width = progress + '%';
+
+            const t = translations[currentLanguage];
+
+            let html = `
+                <div class="question-container">
+                    <div class="question-number">${t.selectCatLabel.replace(':', '')} ${currentQuestion + 1} / ${questions.length}</div>
+                    <div class="question-text">${question.question}</div>
+                    <div class="answer-options">
+            `;
+
+            question.answers.forEach((answer, idx) => {
+                html += `
+                    <button class="answer-option" onclick="selectAnswer(${idx})">
+                        ${answer}
+                    </button>
+                `;
+            });
+
+            html += `
+                    </div>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: space-between;">
+                        <button class="btn" onclick="previousQuestion()" ${currentQuestion === 0 ? 'style="opacity: 0.5; cursor: not-allowed;"' : ''}>← Previous</button>
+                        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" style="opacity: 0.5; cursor: not-allowed;">Next →</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('questionsContent').innerHTML = html;
+        }
+
+        // Select Answer
+        function selectAnswer(index) {
+            assessmentAnswers[currentQuestion] = index;
+            
+            const options = document.querySelectorAll('.answer-option');
+            options.forEach((opt, i) => {
+                opt.classList.remove('selected');
+                if (i === index) opt.classList.add('selected');
+            });
+
+            document.getElementById('nextBtn').style.opacity = '1';
+            document.getElementById('nextBtn').style.cursor = 'pointer';
+        }
+
+        // Next Question
+        function nextQuestion() {
+            const questions = assessments[currentCategory];
+            if (assessmentAnswers[currentQuestion] === undefined) return;
+
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        // Previous Question
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        }
+
+        // Show Results
+        function showResults() {
+            const questions = assessments[currentCategory];
+            const answers = assessmentAnswers;
+            
+            // Calculate score (higher answers = healthier)
+            const score = Math.round((answers.reduce((a, b) => a + b, 0) / (answers.length * 3)) * 100);
+            
+            let message = "";
+            let condition = "";
+            let nextSteps = [];
+            let verse = "";
+
+            const categoryData = categories.find(c => c.id === currentCategory);
+            verse = categoryData.verseNeed;
+
+            if (currentCategory === 'newConverts') {
+                if (score < 40) {
+                    message = "You're just beginning your journey! This is a beautiful time.";
+                    condition = "You're a new believer with a fresh start. Focus on the foundational truths of Christ and building strong roots in His Word.";
+                    nextSteps = categoryData.solutions;
+                } else if (score < 70) {
+                    message = "You're growing in your faith. Keep pressing deeper!";
+                    condition = "You have a good foundation and are beginning to grow. Continue deepening your knowledge of God and building your spiritual habits.";
+                    nextSteps = categoryData.solutions;
+                } else {
+                    message = "You're growing well in your new faith!";
+                    condition = "You demonstrate a solid foundation and are building spiritual momentum. Continue growing and consider mentoring others.";
+                    nextSteps = categoryData.solutions;
+                }
+            } else if (currentCategory === 'backsliders') {
+                if (score < 40) {
+                    message = "God's heart is for your restoration.";
+                    condition = "You're experiencing significant distance from God. The good news: God's grace is available and waiting for you.";
+                    nextSteps = ["Reach out to a counselor", "Pray for divine encounter", "Return to church community", "Seek healing for wounds"];
+                } else if (score < 70) {
+                    message = "Your restoration journey is beginning.";
+                    condition = "You're sensing a need to return but may still have hurt or barriers. God's grace is sufficient for complete healing.";
+                    nextSteps = ["Continue seeking healing", "Connect with supportive believers", "Rebuild your prayer life", "Process church hurt"];
+                } else {
+                    message = "Welcome back home!";
+                    condition = "You're actively returning to your faith and healing. Continue pressing forward into full restoration and joy.";
+                    nextSteps = ["Deepen your healing journey", "Help other backsliders", "Strengthen church involvement", "Discover renewed purpose"];
+                }
+            } else if (currentCategory === 'churchWorkers') {
+                if (score < 40) {
+                    message = "Your heart needs renewal in service.";
+                    condition = "You're serving, but your heart motivation may need attention. This is a critical moment for transformation.";
+                    nextSteps = ["Heart examination and prayer", "Servant leadership training", "Find authentic mentorship", "Renew your calling"];
+                } else if (score < 70) {
+                    message = "You're serving with growing authenticity.";
+                    condition = "You have good intentions but may struggle with motivation or competition. Continue refining your heart posture.";
+                    nextSteps = ["Deepen servant-hood practice", "Address competitive attitudes", "Strengthen prayer life", "Mentor newer workers"];
+                } else {
+                    message = "You're serving with a pure, authentic heart!";
+                    condition = "Your service reflects genuine love and obedience. You're becoming a model of true Christian ministry.";
+                    nextSteps = ["Lead by example", "Mentor and disciple others", "Expand your ministry impact", "Pursue deeper ministry calling"];
+                }
+            } else if (currentCategory === 'leaders') {
+                if (score < 40) {
+                    message = "Your church needs apostolic realignment.";
+                    condition = "Your leadership lacks clarity, unity, or biblical foundation. This is the time for strategic transformation.";
+                    nextSteps = ["Seek counseling for vision clarity", "Gather your leadership team for alignment", "Study apostolic principles", "Consider external mentorship"];
+                } else if (score < 70) {
+                    message = "Your leadership is developing.";
+                    condition = "You have some good direction but need stronger alignment and systems. Growth is happening.";
+                    nextSteps = ["Strengthen discipleship systems", "Build leadership unity", "Clarify church vision", "Implement apostolic practices"];
+                } else {
+                    message = "Your leadership is strong and transforming!";
+                    condition = "You're leading with clarity, unity, and biblical foundation. Your church is experiencing real spiritual growth.";
+                    nextSteps = ["Consolidate gains and expansion", "Develop leadership pipeline", "Mentor other leaders", "Multiply your impact"];
+                }
+            } else if (currentCategory === 'pastors') {
+                if (score < 40) {
+                    message = "Pastor, your soul needs renewal now.";
+                    condition = "You're experiencing significant weariness or burnout. Your restoration is essential for your church's future.";
+                    nextSteps = ["Take time for personal renewal", "Seek mentorship from seasoned pastors", "Restructure for sustainable ministry", "Focus on discipleship over programs"];
+                } else if (score < 70) {
+                    message = "Pastor, renewal is within reach.";
+                    condition = "You're weary but still pressing forward. Strategic changes can restore your joy and effectiveness.";
+                    nextSteps = ["Implement rest and renewal practices", "Train leaders for delegation", "Shift focus to discipleship", "Connect with pastoral community"];
+                } else {
+                    message = "Pastor, you're thriving!";
+                    condition = "You're energized, focused on discipleship, and raising up leaders. Your ministry is healthy and multiplying.";
+                    nextSteps = ["Continue your sustainable pace", "Mentor other pastors", "Develop deeper anointing", "Expand apostolic influence"];
+                }
+            } else if (currentCategory === 'youths') {
+                if (score < 40) {
+                    message = "Your purpose journey is just beginning!";
+                    condition = "You're searching for direction and identity. God has a specific purpose for your life.";
+                    nextSteps = ["Connect with spiritual mentors", "Deepen your Bible study", "Discover your spiritual gifts", "Get involved in meaningful ministry"];
+                } else if (score < 70) {
+                    message = "You're discovering your path!";
+                    condition = "You have faith and some direction. Keep growing deeper with God and seeking wise counsel.";
+                    nextSteps = ["Find active mentors", "Deepen your spiritual practices", "Explore your calling", "Build strong friendships in faith"];
+                } else {
+                    message = "You're a young leader rising!";
+                    condition = "You have strong faith, clear purpose, and are ready to influence your peers. Embrace your leadership calling.";
+                    nextSteps = ["Step into leadership roles", "Mentor younger believers", "Pursue your calling boldly", "Impact your generation"];
+                }
+            }
+
+            document.getElementById('questionsContainer').classList.remove('active');
+            document.getElementById('resultsContainer').classList.add('active');
+            document.getElementById('resultsScore').textContent = score + '%';
+            document.getElementById('resultsMessage').textContent = message;
+
+            document.getElementById('resultsList').innerHTML = condition.split('.').filter(s => s.trim()).map(s => `<li>${s.trim()}.</li>`).join('');
+
+            document.getElementById('stepsList').innerHTML = nextSteps.map(step => `<li>${step}</li>`).join('');
+
+            document.getElementById('resVerse').textContent = `"${verse}"`;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Reset Assessment
+        function resetAssessment() {
+            currentCategory = null;
+            assessmentAnswers = [];
+            currentQuestion = 0;
+
+            document.getElementById('categorySelection').classList.add('active');
+            document.getElementById('questionsContainer').classList.remove('active');
+            document.getElementById('resultsContainer').classList.remove('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Scroll Functions
+        function scrollToAssessment() {
+            document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+            resetAssessment();
+        }
+
+        function scrollToCounseling() {
+            document.getElementById('counseling').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Message Modal
+        function openMessageModal() {
+            document.getElementById('messageModal').style.display = 'block';
+        }
+
+        function closeMessageModal() {
+            document.getElementById('messageModal').style.display = 'none';
+        }
+
+        function sendMessage() {
+            const name = document.getElementById('messageName').value;
+            const message = document.getElementById('messageText').value;
+
+            if (!name || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // In a real application, you would send this to a server
+            alert('Thank you for your message. We will get back to you soon!');
+            closeMessageModal();
+            document.getElementById('messageName').value = '';
+            document.getElementById('messageText').value = '';
+        }
+
+        // Click outside modal to close
+        window.onclick = function(event) {
+            const modal = document.getElementById('messageModal');
+            if (event.target === modal) {
+                closeMessageModal();
+            }
+        };
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
